@@ -17,4 +17,13 @@ class ProductRepository {
     suspend fun getFromFirestore(): List<Product> {
         return firestoreDataSource.getProducts()
     }
+
+    suspend fun deleteProduct(product: Product) {
+        firestoreDataSource.deleteProduct(product.id.toString())
+    }
+
+    suspend fun restoreProduct(product: Product) {
+        firestoreDataSource.restoreProduct(product)
+    }
+
 }

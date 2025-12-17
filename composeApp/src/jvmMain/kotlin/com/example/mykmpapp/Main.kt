@@ -5,7 +5,7 @@ import androidx.compose.ui.window.application
 
 fun main() = application {
     Window(
-        onCloseRequest = {}, // ✅ this is enough
+        onCloseRequest = {},
         title = "Firestorekmp"
     ) {
         App()

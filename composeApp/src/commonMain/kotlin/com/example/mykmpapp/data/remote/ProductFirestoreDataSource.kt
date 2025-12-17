@@ -23,4 +23,13 @@ class ProductFirestoreDataSource {
             .documents
             .mapNotNull { it.data<Product>() }
     }
+
+    suspend fun deleteProduct(productId: String) {
+        productsCollection.document(productId).delete()
+    }
+
+    suspend fun restoreProduct(product: Product) {
+        productsCollection.document(product.id.toString()).set(product)
+    }
+
 }
